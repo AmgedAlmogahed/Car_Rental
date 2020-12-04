@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.lesingInfo.LeasingInfoFragment">
+
+
+    <View
+        android:id="@+id/view5"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/black_solid_cornered_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/view4"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/white_edittext_cornered_backround"
+        app:layout_constraintBottom_toBottomOf="@+id/leasing_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.992"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/passport" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Customer Name"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/customer_name_edit_text"
+        app:layout_constraintStart_toStartOf="@+id/customer_name_edit_text"
+        app:layout_constraintTop_toBottomOf="@+id/passport"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <EditText
+        android:id="@+id/customer_name_edit_text"
+        style="@style/editText_info"
+        android:layout_width="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="60dp"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        android:paddingLeft="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/leasing_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+
+    <com.github.siyamed.shapeimageview.RoundedImageView
+        android:id="@+id/passport"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintBottom_toTopOf="@id/textView20"
+        app:layout_constraintStart_toStartOf="@+id/textView20"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.41000003"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:siBorderWidth="1dp"
+        app:siRadius="6dp"
+        app:siSquare="true"
+        tools:ignore="ContentDescription"
+        tools:src="@drawable/white_cornered_backround" />
+
+    <com.github.siyamed.shapeimageview.RoundedImageView
+        android:id="@+id/license"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginLeft="22dp"
+        app:layout_constraintBottom_toBottomOf="@+id/passport"
+        app:layout_constraintStart_toEndOf="@+id/passport"
+        app:layout_constraintTop_toTopOf="@+id/passport"
+        app:siBorderWidth="1dp"
+        app:siRadius="6dp"
+        app:siSquare="true"
+        tools:ignore="ContentDescription"
+        tools:src="@drawable/white_cornered_backround" />
+
+    <Button
+        android:id="@+id/leasing_button"
+        style="@style/blackButton"
+        android:layout_width="218dp"
+        android:layout_marginTop="80dp"
+        android:text="leasing"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/customer_name_edit_text"
+        app:layout_constraintStart_toStartOf="@+id/customer_name_edit_text"
+        app:layout_constraintTop_toBottomOf="@id/customer_name_edit_text" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="Passport"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/passport"
+        app:layout_constraintStart_toStartOf="@+id/passport" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="License"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/license"
+        app:layout_constraintStart_toStartOf="@+id/license" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginLeft="6dp"
+        android:src="@drawable/ic_baseline_perm_identity_24"
+        app:layout_constraintBottom_toBottomOf="@+id/customer_name_edit_text"
+        app:layout_constraintStart_toStartOf="@+id/customer_name_edit_text"
+        app:layout_constraintTop_toTopOf="@+id/customer_name_edit_text" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_photo_camera_24"
+        app:layout_constraintBottom_toBottomOf="@+id/passport"
+        app:layout_constraintEnd_toEndOf="@+id/passport"
+        app:layout_constraintTop_toBottomOf="@+id/passport" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_photo_camera_24"
+        app:layout_constraintBottom_toBottomOf="@+id/license"
+        app:layout_constraintEnd_toEndOf="@+id/license"
+        app:layout_constraintTop_toBottomOf="@+id/license" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

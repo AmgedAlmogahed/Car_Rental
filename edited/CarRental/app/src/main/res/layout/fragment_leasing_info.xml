@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.carrental.ui.lesingInfo.LeasingInfoViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/leasingInfoView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.lesingInfo.LeasingInfoFragment">
+
+
+        <View
+            android:id="@+id/view13"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView20"
+            app:layout_constraintEnd_toEndOf="@+id/textView20"
+            app:layout_constraintStart_toStartOf="@+id/textView20"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <View
+            android:id="@+id/view5"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginLeft="100dp"
+            android:background="@drawable/black_solid_cornered_background"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view4"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/white_edittext_cornered_backround"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/leasing_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.992"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/view13" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Customer Name"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/customer_name_edit_text"
+            app:layout_constraintStart_toStartOf="@+id/customer_name_edit_text"
+            app:layout_constraintTop_toBottomOf="@+id/view13"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/customer_name_edit_text"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            android:background="@drawable/gray_edittext_cornered_backround"
+            android:gravity="center|start"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            android:paddingLeft="30dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView19"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Start Date"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/start_date_edit_text"
+            app:layout_constraintStart_toStartOf="@+id/customer_name_edit_text"
+            app:layout_constraintTop_toBottomOf="@+id/customer_name_edit_text" />
+
+        <EditText
+            android:id="@+id/start_date_edit_text"
+            style="@style/editText_info"
+            android:layout_width="133dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:inputType="datetime"
+            android:paddingStart="30dp"
+            android:paddingLeft="30dp"
+            android:text="@={viewModel.startDate}"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/textView18"
+            app:layout_constraintEnd_toStartOf="@+id/end_date_edit_text"
+            app:layout_constraintStart_toStartOf="@+id/textView19"
+            app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Price"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/lesing_price_edit_text"
+            app:layout_constraintStart_toStartOf="@+id/lesing_price_edit_text"
+            app:layout_constraintTop_toBottomOf="@+id/start_date_edit_text" />
+
+        <EditText
+            android:id="@+id/lesing_price_edit_text"
+            style="@style/editText_info"
+            android:layout_width="0dp"
+            android:layout_marginTop="8dp"
+            android:hint="Price"
+            android:inputType="number"
+            android:paddingLeft="32dp"
+            android:text="@={viewModel.price}"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textView17"
+            app:layout_constraintEnd_toEndOf="@+id/customer_name_edit_text"
+            app:layout_constraintStart_toStartOf="@+id/customer_name_edit_text"
+            app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Move Agent"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/move_agent_edit_text"
+            app:layout_constraintStart_toStartOf="@+id/move_agent_edit_text"
+            app:layout_constraintTop_toBottomOf="@+id/lesing_price_edit_text" />
+
+        <EditText
+            android:id="@+id/move_agent_edit_text"
+            style="@style/editText_info"
+            android:layout_width="0dp"
+            android:layout_marginTop="8dp"
+            android:inputType="textPersonName"
+            android:text="@={viewModel.moveAgent}"
+            app:layout_constraintBottom_toTopOf="@+id/leasing_button"
+            app:layout_constraintEnd_toEndOf="@+id/customer_name_edit_text"
+            app:layout_constraintStart_toStartOf="@+id/customer_name_edit_text"
+            app:layout_constraintTop_toBottomOf="@id/textView17" />
+
+        <EditText
+            android:id="@+id/end_date_edit_text"
+            style="@style/editText_info"
+            android:layout_width="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:inputType="datetime"
+            android:paddingLeft="30dp"
+            android:text="@={viewModel.endDate}"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/start_date_edit_text"
+            app:layout_constraintEnd_toEndOf="@+id/customer_name_edit_text"
+            app:layout_constraintStart_toEndOf="@+id/start_date_edit_text"
+            app:layout_constraintTop_toTopOf="@+id/start_date_edit_text" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="End Date"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView19"
+            app:layout_constraintStart_toStartOf="@+id/end_date_edit_text" />
+
+
+        <Button
+            android:id="@+id/leasing_button"
+            style="@style/blackButton"
+            android:layout_width="218dp"
+            android:layout_marginTop="48dp"
+            android:onClick="@{() -> viewModel.addCarToTheDatabase()}"
+            android:text="leasing"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/move_agent_edit_text"
+            app:layout_constraintStart_toStartOf="@+id/move_agent_edit_text"
+            app:layout_constraintTop_toBottomOf="@id/move_agent_edit_text" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginLeft="6dp"
+            android:src="@drawable/ic_baseline_attach_money_24"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/lesing_price_edit_text"
+            app:layout_constraintStart_toStartOf="@+id/lesing_price_edit_text"
+            app:layout_constraintTop_toTopOf="@+id/lesing_price_edit_text" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginLeft="6dp"
+            android:src="@drawable/ic_baseline_calendar_today_24"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/start_date_edit_text"
+            app:layout_constraintStart_toStartOf="@+id/start_date_edit_text"
+            app:layout_constraintTop_toTopOf="@+id/start_date_edit_text" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginLeft="6dp"
+            android:src="@drawable/ic_baseline_calendar_today_24"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/end_date_edit_text"
+            app:layout_constraintStart_toStartOf="@+id/end_date_edit_text"
+            app:layout_constraintTop_toTopOf="@+id/end_date_edit_text" />
+
+        <ImageView
+            android:id="@+id/choose_customer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginLeft="6dp"
+            android:src="@drawable/ic_baseline_perm_identity_24"
+            app:layout_constraintBottom_toBottomOf="@+id/customer_name_edit_text"
+            app:layout_constraintStart_toStartOf="@+id/customer_name_edit_text"
+            app:layout_constraintTop_toTopOf="@+id/customer_name_edit_text" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

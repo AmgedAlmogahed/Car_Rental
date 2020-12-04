@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="addServiceViewModel"
+            type="com.example.carrental.ui.addservice.AddServiceViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/add_customer_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.addservice.AddServiceFragment">
+
+        <View
+            android:id="@+id/view5"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:background="@drawable/black_solid_cornered_background"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/white_cornered_backround"
+            app:layout_constraintBottom_toBottomOf="@+id/leasing_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/service_car_image" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Service Type"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/service_type_edit_text"
+            app:layout_constraintStart_toStartOf="@+id/service_type_edit_text"
+            app:layout_constraintTop_toBottomOf="@+id/service_car_image"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <EditText
+            android:id="@+id/service_type_edit_text"
+            style="@style/editText_info"
+            android:layout_width="0dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            android:inputType="textPersonName"
+            android:text="@={addServiceViewModel.serviceType}"
+            app:layout_constraintBottom_toTopOf="@+id/textView19"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Price"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/service_price_edit_text"
+            app:layout_constraintStart_toStartOf="@+id/service_type_edit_text"
+            app:layout_constraintTop_toBottomOf="@+id/service_type_edit_text" />
+
+        <EditText
+            android:id="@+id/service_price_edit_text"
+            style="@style/editText_info"
+            android:layout_width="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="32dp"
+            android:inputType="number|text"
+            android:text="@={addServiceViewModel.price}"
+            app:layout_constraintBottom_toTopOf="@+id/leasing_button"
+            app:layout_constraintEnd_toEndOf="@+id/service_type_edit_text"
+            app:layout_constraintStart_toStartOf="@+id/textView19"
+            app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+        <com.github.siyamed.shapeimageview.RoundedImageView
+            android:id="@+id/service_car_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toTopOf="@id/textView20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.41000003"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:siBorderWidth="1dp"
+            app:siRadius="6dp"
+            app:siSquare="true"
+            tools:ignore="ContentDescription"
+            tools:src="@drawable/bmw" />
+
+        <Button
+            android:id="@+id/leasing_button"
+            style="@style/blackButton"
+            android:layout_width="218dp"
+            android:layout_marginTop="32dp"
+            android:onClick="@{() -> addServiceViewModel.addServiceToTheDatabase()}"
+            android:text="Add"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/service_price_edit_text"
+            app:layout_constraintStart_toStartOf="@+id/service_price_edit_text"
+            app:layout_constraintTop_toBottomOf="@+id/service_price_edit_text" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

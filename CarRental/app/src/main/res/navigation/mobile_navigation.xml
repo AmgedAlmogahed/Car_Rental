@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_car">
+
+    <fragment
+        android:id="@+id/navigation_car"
+        android:name="com.example.carrental.ui.cars.CarsFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_cars">
+        <action
+            android:id="@+id/action_navigation_car_to_leasingInfo"
+            app:destination="@id/leasingInfo"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@anim/in_right_slide"
+            app:popExitAnim="@anim/slide_out_left"/>
+        <action
+            android:id="@+id/action_navigation_car_to_carStatistics"
+            app:destination="@id/carInfo"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@anim/in_right_slide"
+            app:popExitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_navigation_car_to_addCar"
+            app:destination="@id/addCar"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@anim/in_right_slide"
+            app:popExitAnim="@anim/slide_out_left" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.example.carrental.ui.settings.SettingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/addCar"
+        android:name="com.example.carrental.ui.addCar.AddCarFragment"
+        android:label="Add Car"
+        tools:layout="@layout/fragment_add_car">
+        <action
+            android:id="@+id/action_addCar_to_navigation_car"
+            app:destination="@id/navigation_car"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@anim/in_right_slide"
+            app:popExitAnim="@anim/slide_out_left"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/leasingInfo"
+        android:name="com.example.carrental.ui.lesingInfo.LeasingInfoFragment"
+        android:label="Leasing Info"
+        tools:layout="@layout/fragment_leasing_info">
+        <argument
+            android:name="carId"
+            app:argType="long"
+            android:defaultValue="0L" />
+        <action
+            android:id="@+id/action_leasingInfo_to_navigation_car"
+            app:destination="@id/navigation_car"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@anim/in_right_slide"
+            app:popExitAnim="@anim/slide_out_left"/>
+        <argument
+            android:name="customerId"
+            app:argType="long"
+            android:defaultValue="0L" />
+        <action
+            android:id="@+id/action_leasingInfo_to_navigation_customers"
+            app:destination="@id/navigation_customers"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@anim/in_right_slide"
+            app:popExitAnim="@anim/slide_out_left"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/carInfo"
+        android:name="com.example.carrental.ui.carsinfo.CarInfoFragment"
+        android:label="Car Statistics"
+        tools:layout="@layout/fragment_car_info" >
+        <argument android:name="carId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_carInfo_to_addService"
+            app:destination="@id/addService"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@anim/in_right_slide"
+            app:popExitAnim="@anim/slide_out_left"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/addService"
+        android:name="com.example.carrental.ui.addservice.AddServiceFragment"
+        android:label="Add Service"
+        tools:layout="@layout/fragment_add_service">
+        <argument
+            android:name="carId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_addService_to_carInfo"
+            app:destination="@id/carInfo"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@anim/in_right_slide"
+            app:popExitAnim="@anim/slide_out_left"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_customers"
+        android:name="com.example.carrental.ui.customers.CustomersFragment"
+        android:label="Customers"
+        tools:layout="@layout/fragment_customers">
+        <action
+            android:id="@+id/action_customers_to_cutomersInfo"
+            app:destination="@id/cutomersInfo"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@anim/in_right_slide"
+            app:popExitAnim="@anim/slide_out_left"/>
+        <action
+            android:id="@+id/action_navigation_customers_to_leasingInfo"
+            app:destination="@id/leasingInfo"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@anim/in_right_slide"
+            app:popExitAnim="@anim/slide_out_left"/>
+        <argument
+            android:name="destination"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="carId"
+            app:argType="long"
+            android:defaultValue="0L" />
+        <action
+            android:id="@+id/action_navigation_customers_to_add_customer"
+            app:destination="@id/add_customer"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@anim/in_right_slide"
+            app:popExitAnim="@anim/slide_out_left"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/cutomersInfo"
+        android:name="com.example.carrental.ui.customersInfo.CustomersInfoFragment"
+        android:label="Customers Info"
+        tools:layout="@layout/fragment_cutomers_info">
+        <argument
+            android:name="customerId"
+            app:argType="long"
+            android:defaultValue="1L" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_statistics"
+        android:name="com.example.carrental.ui.statistics.StatisticsFragment"
+        android:label="Statistics"
+        tools:layout="@layout/fragment_statistics" />
+
+    <fragment
+        android:id="@+id/add_customer"
+        android:name="com.example.carrental.ui.addcustomer.AddCustomerFragment"
+        android:label="Add Customer"
+        tools:layout="@layout/fragment_add_customer">
+        <action
+            android:id="@+id/action_registerCustomer_to_navigation_customers"
+            app:destination="@id/navigation_customers"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@anim/in_right_slide"
+            app:popExitAnim="@anim/slide_out_left"/>
+        <argument
+            android:name="destination"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="carId"
+            app:argType="long"
+            android:defaultValue="0L" />
+    </fragment>
+
+</navigation>
